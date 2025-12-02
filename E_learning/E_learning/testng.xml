@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners>
+<listener class-name="com.itlearn.utility.iTestListenerClass"></listener>
+</listeners>
+  <test thread-count="5" name="Test">
+  <classes>
+  <!-- <class name="com.itlearn.TestCases.LoginTestDrivenData"/> -->
+  <!--  <class name="com.itlearn.TestCases.SearchTestCase"/>-->
+  <!-- <class name="com.itlearn.TestCases.DashboardTestCase"/>-->
+  <class name="com.itlearn.TestCases.paymentTestCase"/>
+  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

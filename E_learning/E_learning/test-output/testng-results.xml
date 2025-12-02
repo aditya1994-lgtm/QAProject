@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-12-02T19:07:33 IST" name="Default suite" finished-at="2025-12-02T19:09:04 IST" duration-ms="90376">
+    <groups>
+    </groups>
+    <test started-at="2025-12-02T19:07:33 IST" name="Default test" finished-at="2025-12-02T19:09:04 IST" duration-ms="90376">
+      <class name="com.itlearn.TestCases.DashboardTestCase">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.itlearn.TestCases.DashboardTestCase@17f9d882]" started-at="2025-12-02T19:07:33 IST" name="setUp" finished-at="2025-12-02T19:07:42 IST" duration-ms="8570" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCourses()[pri:1, instance:com.itlearn.TestCases.DashboardTestCase@17f9d882]" started-at="2025-12-02T19:07:42 IST" name="testCourses" finished-at="2025-12-02T19:09:04 IST" duration-ms="81482" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCourses -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.itlearn.TestCases.DashboardTestCase@17f9d882]" started-at="2025-12-02T19:09:04 IST" name="tearDown" finished-at="2025-12-02T19:09:04 IST" duration-ms="269" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.itlearn.TestCases.DashboardTestCase -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

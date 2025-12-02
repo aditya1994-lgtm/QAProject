@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.Test</groupId>
+  <artifactId>sleniumTesting</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+<build>
+  <plugins>
+    <!-- Compiler plugin with annotationProcessorPaths + add-exports for Lombok on JDK 9+ -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.11.0</version>
+      <configuration>
+        <source>1.8</source>
+        <target>1.8</target>
+
+        <!-- If running on JDK 9+, export javac internals to unnamed module so Lombok works -->
+        <compilerArgs>
+          <arg>--add-exports</arg>
+          <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+          <arg>--add-exports</arg>
+          <arg>jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+          <arg>--add-exports</arg>
+          <arg>jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+        </compilerArgs>
+
+        <!-- Ensure annotation processors are provided from the plugin path -->
+        <annotationProcessorPaths>
+          <path>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.28</version> <!-- or latest -->
+          </path>
+        </annotationProcessorPaths>
+      </configuration>
+    </plugin>
+
+    <!-- Surefire stays if you use it -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <suiteXmlFiles>
+          <suiteXmlFile>testng.xml</suiteXmlFile>
+        </suiteXmlFiles>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+
+
+
+
+  <dependencies>
+
+    <!-- Selenium 4 -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.24.0</version>
+    </dependency>
+
+    <!-- WebDriverManager (latest stable for Selenium 4) -->
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>5.4.0</version>
+    </dependency>
+
+    <!-- TestNG -->
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.8.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit (optional, if any code uses it) -->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13.2</version>
+        <scope>test</scope>
+    </dependency>
+
+    <!-- Guava (used by Selenium) -->
+    <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>32.1.2-jre</version>
+    </dependency>
+
+    <!-- Guice (used by TestNG internally) -->
+    <dependency>
+        <groupId>com.google.inject</groupId>
+        <artifactId>guice</artifactId>
+        <version>5.1.0</version>
+    </dependency>
+
+    <!-- Commons IO (file utils) -->
+    <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>2.7</version>
+    </dependency>
+
+    <!-- ExtentReports -->
+    <dependency>
+        <groupId>com.aventstack</groupId>
+        <artifactId>extentreports</artifactId>
+        <version>5.0.9</version>
+    </dependency>
+
+    <!-- ReportNG (optional) -->
+    <dependency>
+        <groupId>com.github.sdrss</groupId>
+        <artifactId>reportng</artifactId>
+        <version>2.4.9</version>
+        <scope>test</scope>
+    </dependency>
+
+    <!-- Apache POI (latest stable for Excel) -->
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>5.2.3</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>5.2.3</version>
+    </dependency>
+
+    <!-- FIX: Correct Log4j API + CORE (matching versions) -->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+        <version>2.19.0</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>2.19.0</version>
+    </dependency>
+<dependency>
+  <groupId>org.projectlombok</groupId>
+  <artifactId>lombok</artifactId>
+  <version>1.18.28</version>
+  <scope>provided</scope>
+</dependency>
+
+</dependencies>
+
+</project>
