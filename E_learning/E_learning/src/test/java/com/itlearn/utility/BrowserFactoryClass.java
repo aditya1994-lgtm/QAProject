@@ -14,7 +14,7 @@ public class BrowserFactoryClass {
     public static WebDriver startApplication(WebDriver driver, String browserName, String appUrl) {
 
         if (browserName.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();   // Auto matches Chrome version
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         }
         else if (browserName.equalsIgnoreCase("firefox")) {
@@ -36,11 +36,3 @@ public class BrowserFactoryClass {
         return driver;
     }
 }
-
-	
-	public static void quitBrowser(WebDriver driver)
-	{
-		driver.quit();
-	}
-}
-
