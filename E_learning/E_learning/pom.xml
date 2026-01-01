@@ -7,6 +7,11 @@
   <groupId>com.Test</groupId>
   <artifactId>sleniumTesting</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+         <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 <build>
   <plugins>
     <!-- Compiler plugin with annotationProcessorPaths + add-exports for Lombok on JDK 9+ -->
@@ -157,5 +162,6 @@
 </dependency>
 
 </dependencies>
+
 
 </project>
