@@ -13,38 +13,32 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 <build>
-  <plugins>
-    <!-- Compiler plugin with annotationProcessorPaths + add-exports for Lombok on JDK 9+ -->
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-compiler-plugin</artifactId>
-      <version>3.11.0</version>
-      <configuration>
-     <source>11</source>
-      <target>11</target>
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-compiler-plugin</artifactId>
+  <version>3.11.0</version>
+  <configuration>
+    <source>11</source>
+    <target>11</target>
 
+    <compilerArgs>
+      <arg>--add-exports</arg>
+      <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+      <arg>--add-exports</arg>
+      <arg>jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+      <arg>--add-exports</arg>
+      <arg>jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+    </compilerArgs>
 
-        <!-- If running on JDK 9+, export javac internals to unnamed module so Lombok works -->
-        <compilerArgs>
-          <arg>--add-exports</arg>
-          <arg>jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
-          <arg>--add-exports</arg>
-          <arg>jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
-          <arg>--add-exports</arg>
-          <arg>jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
-        </compilerArgs>
-
-        <!-- Ensure annotation processors are provided from the plugin path -->
-        <annotationProcessorPaths>
-          <path>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.28</version> <!-- or latest -->
-          </path>
-        </annotationProcessorPaths>
-      </configuration>
-    </plugin>
-
+    <annotationProcessorPaths>
+      <path>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.28</version>
+      </path>
+    </annotationProcessorPaths>
+  </configuration>
+</plugin>
     <!-- Surefire stays if you use it -->
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
@@ -166,4 +160,5 @@
 
 
 </project>
+
 
